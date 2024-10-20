@@ -1,0 +1,50 @@
+.hero-header {
+  background-color: white;
+  padding: 4rem 0;
+}
+
+.custom-container {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #6190FF; /* Color lila para el texto */
+}
+
+.hero-image {
+  max-width: 250px;
+  width: 100%;
+}
+
+.fw-bolder, .lead {
+  color: #6190FF;
+  margin: 0;
+  padding: 0;
+}
+
+.btn-light {
+  background-color: #6190FF; 
+  color: white;
+  border: none;
+}
+
+.btn-light:hover {
+  background-color: #6190FF; 
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .custom-container {
+    padding: 2rem 1rem;
+  }
+
+  .hero-image {
+    max-width: 150px;
+  }
+
+  .fw-bolder {
+    font-size: 1.5rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+}

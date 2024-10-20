@@ -1,0 +1,39 @@
+/* Estilos para la tarjeta principal */
+.custom-card {
+    background-color: white;
+    border-radius: 50% 50% 0 0; /* Semicírculo superior */
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: -50px; /* Ajuste para mover la tarjeta un poco hacia arriba */
+  }
+  
+  /* Estilos para el texto */
+  h2 {
+    color: #000;
+    font-weight: 600; /* Semibold */
+  }
+  
+  /* Estilos para el dropdown */
+  .custom-select {
+    background-color: #6190FF;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 8px;
+  }
+  
+  /* Estilos para el botón */
+  .btn-outline-primary {
+    border-color: #6190FF;
+    color: #6190FF;
+    font-weight: 600; /* Semibold */
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: #6190FF;
+    color: white;
+  }
+  
