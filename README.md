@@ -6,9 +6,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ###  Características  ###
 
-- **Calendario:** Contiene un calendario implementado con FullCalendar, que permite a los usuarios agregar, eliminar y ver detalles de eventos. Además, incluye funcionalidades para seleccionar fechas directamente desde el calendario.
-- **Gráficos:** Incluye gráficos implementados desde la librería de Charts para visualizar datos de manera efectiva.
-- **Mapa:** Implementa un mapa de MapBox que almacena la información de diferentes marcadores, proporcionando una forma visual de presentar ubicaciones relevantes.
 
 ###  Tecnologías Usadas  ### 💻
 
