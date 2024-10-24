@@ -1,0 +1,52 @@
+<div class="custom-card">
+  <button routerLink="/" class="btn btn-primary">volver</button>
+  <div class="container text-center py-5">
+    <img src="../../../../assets/imagen4.svg" alt="Pais" class="country-image-large mb-4">
+    
+    <h2 class="fw-semibold mb-4">¿Qué tipo de trámite estás buscando?</h2>
+   
+    <button (click)="onClickShortDuration()" class="btn btn-outline-primary mt-4">Estancia de corta duración</button>
+    <button (click)="onClickLongDuration()" class="btn btn-outline-primary mt-4">Estancia de larga duración</button>
+  </div>
+</div>
+
+
+<!-- Componente de visas de corta duración -->
+<div class="custom-card" *ngIf="showShortDuration">
+  <div class="container text-center py-5">
+   
+    <button (click)="volver()" class="btn btn-secondary mt-4">Volver atrás</button>
+
+    <h2 class="fw-semibold mb-4">Estancias de corta duración</h2>
+    <h4>Elige una opción</h4>
+
+    <button class="btn btn-outline-primary mt-4">Visa de turista</button>
+    <button class="btn btn-outline-primary mt-4">Visa de trabajo</button>
+    <button class="btn btn-outline-primary mt-4">Visa de estudiante</button>
+    <button class="btn btn-outline-primary mt-4">Visa de voluntariado</button>
+    <button class="btn btn-outline-primary mt-4">Visa de investigación</button>
+  </div>
+</div>
+
+
+
+<!-- Componente de visas de larga duración -->
+<div class="custom-card" *ngIf="showLongDuration">
+  <div class="container text-center py-5">
+    <button (click)="volver()" class="btn btn-secondary mt-4">Volver atrás</button>
+
+    <img src="../../../../assets/imagen1.svg" alt="Pais" class="country-image-large mb-4">
+    
+    <h2 class="fw-semibold mb-4">Estancias de larga duración</h2>
+    <h4>Elige una opción</h4>
+    
+    <button class="btn btn-outline-primary mt-4">Visa no lucrativa</button>
+    <button class="btn btn-outline-primary mt-4">Visa de inversionista</button>
+    <button class="btn btn-outline-primary mt-4">Reagrupación familiar</button>
+    
+    <button class="btn btn-outline-primary mt-4">Arraigo social</button>
+    <button class="btn btn-outline-primary mt-4">Arraigo laboral</button>
+    <button class="btn btn-outline-primary mt-4">Arraigo familiar</button>
+   
+  </div>
+</div>
