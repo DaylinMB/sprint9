@@ -1,8 +1,12 @@
-:host {
-  display: block;
+.container-fluid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
-  background-color: #6190ff;
+  width: 100vw;
   overflow: hidden;
+  position: relative;
+  background-color: #6190ff;
 }
 
 .custom-card {
@@ -10,7 +14,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #ffffff;
   border-radius: 205px 205px 0 0;
   width: 100%;
   margin: 0 auto;
@@ -18,10 +21,9 @@
   position: absolute;
   bottom: 0;
   height: 90vh;
-  transition: bottom 0.5s ease;
+  background-color: white;
 }
 
-/* Estilo para la imagen en móviles */
 .country-image-large {
   width: 355px;
   height: auto;
@@ -37,55 +39,66 @@ h2 {
   margin-bottom: 2rem;
 }
 
-button.btn {
+button.btn-outline-primary {
   margin-top: 12rem;
   border-color: #6190ff;
   color: #6190ff;
+  background-color: white;
   font-weight: 600;
   font-size: 1.1rem;
   border-radius: 35px;
   padding: 0.6rem 2rem;
-  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-button.btn:hover {
-  background-color: #6190ff;
+button.btn-secondary {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1050;
+  background: none;
+  border: none;
   color: white;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
-
-.btn-secondary {
-  color: #ffffff;
-
+.back-button {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1050;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
+button.btn-secondary:hover {
+  text-decoration: underline;
+}
 
-
-/* Ajuste responsive para escritorio */
-/* @media (min-width: 768px) {
-  .custom-card {
-    border-radius: 220px 220px 0 0; 
-    transition: bottom 0.5s ease;
-  }
-  
+@media (min-width: 1200px) {
   .country-image-large {
     width: 400px;
-    margin-bottom: 2rem;
-    object-fit: cover; 
   }
 
   button.btn {
-    margin-top: 8rem; 
+    margin-top: 8rem;
     font-size: 1.2rem;
   }
 
-
-  .custom-select {
-    display: block;
-    margin: 0 auto; 
-    width: 400px;
-    border: none;
-    padding: 0.75rem;
-    border-radius: 14px;
+  .back-button {
+    margin-top: 8rem;
+    font-size: 1.2rem;
   }
-} */
+
+  button.btn-secondary {
+    position: fixed;
+    top: -100px;
+    left: 10px;
+    background: none !important;
+    border: none;
+    cursor: pointer;
+  }
+}

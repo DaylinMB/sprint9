@@ -1,14 +1,17 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
+
 import { CountriesComponent } from '../countries/countries.component';
 
 
 @Component({
   selector: 'app-stay',
   standalone: true,
-  imports: [ CommonModule, CountriesComponent ],
+  imports: [ CommonModule, CountriesComponent, RouterOutlet, RouterModule ],
   templateUrl: './stay.component.html',
-  styleUrl: './stay.component.css'
+  styleUrls: ['./stay.component.css']
 })
 export class StayComponent {
 
@@ -30,6 +33,8 @@ export class StayComponent {
     this.showShortDuration = false;
     this.showLongDuration = false;
   }
+
+
 }
 
 

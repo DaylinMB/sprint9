@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 import { CountryService } from '../../services/country.service';
 import { Country } from '../../interfaces/country';
 import { StayComponent } from '../stay/stay.component';
-import { Routes } from '@angular/router';
 
 @Component({
   selector: 'app-countries',

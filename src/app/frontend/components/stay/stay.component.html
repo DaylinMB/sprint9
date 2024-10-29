@@ -1,25 +1,33 @@
-<div class="custom-card">
-  <button routerLink="/" class="btn btn-primary">volver</button>
-  <div class="container text-center py-5">
+<div class="container-fluid"  *ngIf="!showShortDuration && !showLongDuration">
+  <div class="custom-card text-center">
+    <button 
+      routerLink="/" 
+      class="btn btn-secondary">
+      Volver
+    </button>
+
     <img src="../../../../assets/imagen4.svg" alt="Pais" class="country-image-large mb-4">
     
     <h2 class="fw-semibold mb-4">¿Qué tipo de trámite estás buscando?</h2>
-   
+    
     <button (click)="onClickShortDuration()" class="btn btn-outline-primary mt-4">Estancia de corta duración</button>
     <button (click)="onClickLongDuration()" class="btn btn-outline-primary mt-4">Estancia de larga duración</button>
+    
   </div>
 </div>
 
 
 <!-- Componente de visas de corta duración -->
-<div class="custom-card" *ngIf="showShortDuration">
-  <div class="container text-center py-5">
-   
-    <button (click)="volver()" class="btn btn-secondary mt-4">Volver atrás</button>
+<div class="container-fluid"  *ngIf="showShortDuration">
 
+  <button (click)="volver()" class="back-button mt-4">Volver</button> 
+
+  <div class="custom-card text-center">
+     
     <h2 class="fw-semibold mb-4">Estancias de corta duración</h2>
+    
     <h4>Elige una opción</h4>
-
+   
     <button class="btn btn-outline-primary mt-4">Visa de turista</button>
     <button class="btn btn-outline-primary mt-4">Visa de trabajo</button>
     <button class="btn btn-outline-primary mt-4">Visa de estudiante</button>
@@ -29,11 +37,12 @@
 </div>
 
 
+<!-- Componente de visas de larga duración --> 
+<div class="container-fluid" *ngIf="showLongDuration">
 
-<!-- Componente de visas de larga duración -->
-<div class="custom-card" *ngIf="showLongDuration">
-  <div class="container text-center py-5">
-    <button (click)="volver()" class="btn btn-secondary mt-4">Volver atrás</button>
+  <button (click)="volver()" class="back-button mt-4">volver</button>
+  
+  <div class="custom-card text-center">
 
     <img src="../../../../assets/imagen1.svg" alt="Pais" class="country-image-large mb-4">
     
@@ -49,4 +58,4 @@
     <button class="btn btn-outline-primary mt-4">Arraigo familiar</button>
    
   </div>
-</div>
+</div> 
