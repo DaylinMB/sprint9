@@ -8,7 +8,9 @@ export const routes: Routes = [
     
     { path: '', component: CountriesComponent },
     { path: 'stay', component: StayComponent },
-    { path: 'faqs/:visaType', component: FaqComponent },
+    { path: 'stay/short', component: StayComponent }, 
+    { path: 'stay/long', component: StayComponent }, 
+    { path: 'faq', component: FaqComponent },
    
 ];
 

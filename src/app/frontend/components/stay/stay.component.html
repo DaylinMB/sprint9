@@ -16,8 +16,9 @@
 
 
 
-<!-- Componente de visas de corta duración -->
+<!--Corta duracion-->
 <div class="container-fluid"  *ngIf="showShortDuration">
+
   <button (click)="volver()" class="btn btn-secondary">Volver</button> 
 
   <div class="custom-card text-center">
@@ -27,15 +28,18 @@
     
     <h4>Elige una opción</h4>
    
-    <button (click)="navigateToFaq('visa de turista')">Visa de turista</button>
-    <button (click)="navigateToFaq('trabajo')" class="btn btn-outline-primary mt-4">Visa de trabajo</button>
-    <button (click)="navigateToFaq('estudiante')" class="btn btn-outline-primary mt-4">Visa de estudiante</button>
-    <button (click)="navigateToFaq('voluntariado')" class="btn btn-outline-primary mt-4">Visa de voluntariado</button>
-    <button (click)="navigateToFaq('investigacion')" class="btn btn-outline-primary mt-4">Visa de investigación</button>
+    <button class="btn btn-outline-primary mt-4" (click)="navigateToFaq('visa de turista')">Visa de turista</button>
+
+    <button (click)="navigateToFaq('Visa de trabajo')" class="btn btn-outline-primary mt-4">Visa de trabajo</button>
+    <button (click)="navigateToFaq('Visa de estudiante')" class="btn btn-outline-primary mt-4">Visa de estudiante</button>
+    <button (click)="navigateToFaq('Visa de voluntariado')" class="btn btn-outline-primary mt-4">Visa de voluntariado</button>
+    <button (click)="navigateToFaq('Visa de investigación')" class="btn btn-outline-primary mt-4">Visa de investigación</button>
   </div>
 </div>
 
-<!-- Componente de visas de larga duración --> 
+
+
+<!--Larga duracion-->
 <div class="container-fluid" *ngIf="showLongDuration">
   <button (click)="volver()" class="btn btn-secondary">Volver</button>
   
@@ -57,34 +61,7 @@
 
 
 
-
-
 <!-- 
-
-dm
-
- Componente de visas de corta duración 
-<div class="container-fluid"  *ngIf="showShortDuration">
-
-  <button (click)="volver()" class="btn btn-secondary">Volver</button> 
-
-  <div class="custom-card text-center">
-    <img src="../../../../assets/imagen1.svg" alt="Pais" class="country-image-large mb-4">
-     
-    <h2 class="fw-semibold mb-4">Estancias de corta duración</h2>
-    
-    <h4>Elige una opción</h4>
-   
-    <button class="btn btn-outline-primary mt-4">Visa de turista</button>
-    <button class="btn btn-outline-primary mt-4">Visa de trabajo</button>
-    <button class="btn btn-outline-primary mt-4">Visa de estudiante</button>
-    <button class="btn btn-outline-primary mt-4">Visa de voluntariado</button>
-    <button class="btn btn-outline-primary mt-4">Visa de investigación</button>
-  </div>
-</div>
-
-
-Componente de visas de larga duración 
 <div class="container-fluid" *ngIf="showLongDuration">
 
   <button (click)="volver()" class="btn btn-secondary">Volver</button>

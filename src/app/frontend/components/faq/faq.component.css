@@ -1,0 +1,117 @@
+.container-fluid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+    background-color: #6190ff;
+  }
+  
+  .custom-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 205px 205px 0 0;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+    position: absolute;
+    bottom: 0;
+    height: 90vh;
+    background-color: white;
+  }
+  
+  /* Estilos para la sección de FAQs */
+  .faq-item {
+    width: 100%; /* Asegúrate de que ocupe el ancho completo */
+    margin-bottom: 1.5rem; /* Espacio entre cada FAQ */
+    padding: 1.5rem; /* Espacio interno para cada FAQ */
+    border: 1px solid #e0e0e0; /* Borde sutil */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    background-color: #f9f9f9; /* Fondo claro para cada FAQ */
+  }
+  
+  h2 {
+    color: #333;
+    font-weight: 600;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+  }
+  
+  button.btn-primary {
+    margin-top: 12rem; /* Ajusta según sea necesario */
+    border-color: #6190ff;
+    color: #ffffff;
+    background-color: #6190ff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 35px;
+    padding: 0.6rem 2rem;
+  }
+  
+  button.btn-secondary {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1050;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .custom-select {
+    background-color: #6190ff;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 14px;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  .custom-select:hover {
+    background-color: #668cdf;
+  }
+  
+  /* Ajuste responsive para escritorio */
+  @media (min-width: 1200px) {
+    .country-image-large {
+        width: 400px; /* Ajusta según sea necesario */
+    }
+  
+    button.btn {
+        margin-top: 8rem; /* Ajusta según sea necesario */
+        font-size: 1.2rem;
+    }
+  
+    .custom-select {
+        display: block;
+        margin: 0 auto;
+        width: 400px; /* Mantén el ancho que deseas */
+        border: none;
+        padding: 0.75rem;
+        border-radius: 14px;
+    }
+  }
+  
+
+  .accordion-button {
+    background-color: #f8f9fa; /* Color de fondo del botón */
+    color: #333; /* Color del texto */
+}
+
+.accordion-button:hover {
+    background-color: #e9ecef; /* Color de fondo en hover */
+}
+
+.accordion-body {
+    background-color: #ffffff; /* Color de fondo del cuerpo del acordeón */
+}

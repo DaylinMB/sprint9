@@ -1,10 +1,20 @@
-<h1>Preguntas Frecuentes</h1>
+<div class="container-fluid">
+    
+    <button (click)="volver()" class="btn btn-secondary">Volver</button> 
+    
+  <div class="row justify-content-center">
 
-<div *ngIf="faqs.length === 0">
-  No hay FAQs disponibles.
-</div>
+    <div class="custom-card">
+      <h1 class="fw-semibold mb-4">Preguntas Frecuentes</h1>
 
-<div *ngFor="let faq of faqs" class="faq-item">
-  <h3>{{ faq.question }}</h3>
-  <p>{{ faq.answer }}</p>
+      <div *ngIf="filteredFaqs.length === 0" class="mb-3">
+        <p>No hay FAQs disponibles para este tipo de visa.</p>
+      </div>
+
+      <div *ngFor="let faq of filteredFaqs" class="faq-item mb-4">
+        <h3 class="fw-bold">{{ faq.question }}</h3>
+        <p>{{ faq.answer }}</p>
+      </div>
+    </div>
+  </div>
 </div>

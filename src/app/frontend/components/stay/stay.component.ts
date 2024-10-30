@@ -5,13 +5,15 @@ import { RouterModule } from '@angular/router';
 import { Router } from '@angular/router';
 
 import { CountriesComponent } from '../countries/countries.component';
+import { FaqComponent } from '../faq/faq.component';
+
 
 
 
 @Component({
   selector: 'app-stay',
   standalone: true,
-  imports: [ CommonModule, CountriesComponent, RouterOutlet, RouterModule ],
+  imports: [ CommonModule, CountriesComponent, RouterOutlet, RouterModule, FaqComponent  ],
   templateUrl: './stay.component.html',
   styleUrls: ['./stay.component.css']
 })
@@ -32,23 +34,23 @@ export class StayComponent {
   onClickShortDuration() {
     this.showShortDuration = true;
     this.showLongDuration = false;
-    this.selectedVisaType = 'short';
   }
   
   onClickLongDuration() {
     this.showShortDuration = false;
     this.showLongDuration = true;
-    this.selectedVisaType = 'long';
   }
 
   volver() {
-    this.showShortDuration = false;
+    this.router.navigate(['/stay']);
+    this.showShortDuration = false; 
     this.showLongDuration = false;
   }
    
-  navigateToFaq(visaType: string): void {
-    this.router.navigate(['/faqs', visaType, { country: this.selectedCountry }]);
+  navigateToFaq(visaType: string) {
+    this.router.navigate(['/faq'], { queryParams: { type: visaType } });
   }
+  
 }
 
 
