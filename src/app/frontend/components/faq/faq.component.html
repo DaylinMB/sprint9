@@ -1,20 +1,78 @@
-<div class="container-fluid">
+<!-- 
+
+<div class="container text-center">
+    <button (click)="volver()" class="btn btn-secondary ">Volver</button>
     
-    <button (click)="volver()" class="btn btn-secondary">Volver</button> 
     
-  <div class="row justify-content-center">
+        <div class="row mb-4">
+          <h4 class="mt-4">Nuestro equipo legal puede ayudarte con tu proceso</h4>
+          <div
+            class="col-12 col-md-6 d-flex justify-content-center align-items-center mb-4">
+            <img src="../../../../assets/imagen9.svg" alt="faqs" class="faq-image-large img-fluid"/>
+          </div>
+      
+          <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
+            <button class="btn btn-primary">Contactar</button>
+          </div>
+        </div>
 
-    <div class="custom-card">
-      <h1 class="fw-semibold mb-4">Preguntas Frecuentes</h1>
 
-      <div *ngIf="filteredFaqs.length === 0" class="mb-3">
-        <p>No hay FAQs disponibles para este tipo de visa.</p>
-      </div>
 
-      <div *ngFor="let faq of filteredFaqs" class="faq-item mb-4">
-        <h3 class="fw-bold">{{ faq.question }}</h3>
-        <p>{{ faq.answer }}</p>
-      </div>
+
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="accordion" id="accordionExample">
+                    <div *ngFor="let faq of filteredFaqs; let i = index"
+                        class="accordion-item custom-accordion-item">
+
+                        <button (click)="toggleAccordion(i)" class="accordion-button custom-accordion-button"  [class.collapsed]="openIndex !== i"  type="button">
+                            {{ faq.question }}
+                        </button>
+
+                        <div [id]="'collapse' + i" class="accordion-collapse collapse" [class.show]="openIndex === i" [attr.aria-labelledby]="'heading' + i" data-bs-parent="#accordionExample">
+                        
+                            <div class="accordion-body custom-accordion-body">
+                                <p>{{ faq.answer }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+</div> -->
+
+
+<div class="container">
+
+    <button (click)="volver()" class="btn btn-secondary mb-3">Volver</button>
+    
+    <div class="top-section">
+        
+        <h4>Nuestro equipo legal puede ayudarte con tu proceso</h4>
+        <div class="row mb-4">
+
+            <div class="col-12 col-md-6 d-flex justify-content-center align-items-center mb-4">
+                <img src="../../../../assets/imagen9.svg" alt="faqs" class="faq-image-large img-fluid" />
+            </div>
+            <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
+                <button class="btn btn-primary">Contactar</button>
+            </div>
+        </div>
     </div>
-  </div>
+
+    <div class="bottom-section">
+        <div class="accordion" id="accordionExample">
+            <div *ngFor="let faq of filteredFaqs; let i = index" class="accordion-item custom-accordion-item">
+                <button (click)="toggleAccordion(i)" class="accordion-button custom-accordion-button" [class.collapsed]="openIndex !== i" type="button">
+                    {{ faq.question }}
+                </button>
+                <div [id]="'collapse' + i" class="accordion-collapse collapse" [class.show]="openIndex === i" [attr.aria-labelledby]="'heading' + i" data-bs-parent="#accordionExample">
+                    <div class="accordion-body custom-accordion-body">
+                        <p>{{ faq.answer }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

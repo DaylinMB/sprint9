@@ -36,4 +36,6 @@ export class CountriesComponent {
   onCountrySelect(country: string) {
     this.countrySelected.emit(country);
   }
+
+  
 }

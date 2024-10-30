@@ -6,7 +6,7 @@
   width: 100vw;
   overflow: hidden;
   position: relative;
-  background-color: #6190ff;
+  background-color: #6492FF;
 }
 
 .custom-card {
@@ -16,12 +16,14 @@
   align-items: center;
   border-radius: 205px 205px 0 0;
   width: 100%;
-  margin: 0 auto; 
+  margin: 0 auto;
   padding: 2rem;
   position: absolute;
   bottom: 0;
-  height: 90vh; 
+  height: 90vh;
   background-color: white;
+
+  box-shadow: 0 4px 80px rgba(52, 46, 216, 0.4);
 }
 
 .country-image-large {
@@ -41,9 +43,9 @@ h2 {
 
 button.btn-primary {
   margin-top: 12rem; /* Ajusta según sea necesario */
-  border-color: #6190ff;
+  border-color: #6492FF;
   color: #ffffff;
-  background-color: #6190ff;
+  background-color: #6492FF;
   font-weight: 600;
   font-size: 1.1rem;
   border-radius: 35px;
@@ -60,7 +62,7 @@ button.btn-secondary {
 }
 
 .custom-select {
-  background-color: #6190ff;
+  background-color: #6492FF;
   color: white;
   border: none;
   padding: 0.75rem;
@@ -77,20 +79,20 @@ button.btn-secondary {
 /* Ajuste responsive para escritorio */
 @media (min-width: 1200px) {
   .country-image-large {
-      width: 400px; /* Ajusta según sea necesario */
+    width: 400px; /* Ajusta según sea necesario */
   }
 
   button.btn {
-      margin-top: 8rem; /* Ajusta según sea necesario */
-      font-size: 1.2rem;
+    margin-top: 8rem; /* Ajusta según sea necesario */
+    font-size: 1.2rem;
   }
 
   .custom-select {
-      display: block;
-      margin: 0 auto;
-      width: 400px; /* Mantén el ancho que deseas */
-      border: none;
-      padding: 0.75rem;
-      border-radius: 14px;
+    display: block;
+    margin: 0 auto;
+    width: 400px; /* Mantén el ancho que deseas */
+    border: none;
+    padding: 0.75rem;
+    border-radius: 14px;
   }
 }

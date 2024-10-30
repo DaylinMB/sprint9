@@ -6,8 +6,9 @@
   width: 100vw;
   overflow: hidden;
   position: relative;
-  background-color: #6190ff;
+  background-color: #6492FF;
 }
+
 
 .custom-card {
   display: flex;
@@ -16,13 +17,16 @@
   align-items: center;
   border-radius: 205px 205px 0 0;
   width: 100%;
-  margin: 0 auto;
+  margin: 0 auto; 
   padding: 2rem;
   position: absolute;
   bottom: 0;
-  height: 90vh;
+  height: 90vh; 
   background-color: white;
+  
+  box-shadow: 0 4px 80px rgba(52, 46, 216, 0.4);
 }
+
 
 .country-image-large {
   width: 355px;
@@ -41,8 +45,8 @@ h2 {
 
 button.btn-outline-primary {
   margin-top: 12rem;
-  border-color: #6190ff;
-  color: #6190ff;
+  border-color: #6492FF;
+  color: #6492FF;
   background-color: white;
   font-weight: 600;
   font-size: 1.1rem;

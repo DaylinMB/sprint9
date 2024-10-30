@@ -20,7 +20,7 @@ export class FaqComponent implements OnInit {
   filteredFaqs: Faq[] = [];
   selectedCountry: string = '';
   selectedVisaType: string = '';
-  lastRoute: string = ''; 
+  openIndex: number | null = null; 
 
   constructor(
     private faqService: FaqService,
@@ -28,19 +28,15 @@ export class FaqComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
-
   ngOnInit(): void {
     this.faqService.getFaqs().subscribe({
       next: (data) => {
         this.faqs = data;
-        this.filteredFaqs = data; // Inicializa `filteredFaqs` con todos los datos
-  
-        // Leer los parámetros de consulta y filtrar FAQs
+        this.filteredFaqs = data;
         this.route.queryParams.subscribe(params => {
-          if (params['type']) {
-            this.selectedVisaType = params['type'];
-            this.applyFilters(); // Aplicar filtros con el tipo de visa seleccionado
-          }
+          this.selectedVisaType = params['type'] || '';
+          this.selectedCountry = params['country'] || '';
+          this.applyFilters();
         });
       },
       error: (error) => {
@@ -48,30 +44,31 @@ export class FaqComponent implements OnInit {
       }
     });
   }
-  
-  
 
-
-  navigateToFaq(visaType: string) {
-    this.router.navigate(['/faq'], { queryParams: { type: visaType } });
+  toggleAccordion(index: number): void {
+    // Alternar el índice abierto o cerrarlo si ya estaba abierto
+    this.openIndex = this.openIndex === index ? null : index;
   }
 
+
+ 
+  
   applyFilters(): void {
-    console.log('Tipo de visa seleccionado:', this.selectedVisaType);
     this.filteredFaqs = this.faqs.filter(faq => {
       const matchesVisaType = this.selectedVisaType
         ? faq.question.toLowerCase().includes(this.selectedVisaType.toLowerCase())
         : true;
-  
-      console.log(`Pregunta: "${faq.question}", Coincide: ${matchesVisaType}`);
-      return matchesVisaType; 
+      const matchesCountry = this.selectedCountry
+        ? faq.question.toLowerCase().includes(this.selectedCountry.toLowerCase()) || faq.answer.toLowerCase().includes(this.selectedCountry.toLowerCase())
+        : true;
+      return matchesVisaType && matchesCountry;
     });
-  
-    // Para depurar el resultado
-    console.log('Preguntas filtradas:', this.filteredFaqs);
   }
   
-  
+  navigateToFaq() {
+    this.router.navigate(['/faq'], { queryParams: { type: this.selectedVisaType, country: this.selectedCountry } });
+  }
+
   volver(): void {
     this.router.navigate(['/stay']); 
   }
