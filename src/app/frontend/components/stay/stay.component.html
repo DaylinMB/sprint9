@@ -1,14 +1,12 @@
 <div class="container-fluid"  *ngIf="!showShortDuration && !showLongDuration">
   <div class="custom-card text-center">
-    <button 
-      routerLink="/" 
-      class="btn btn-secondary">
-      Volver
+    <button routerLink="/" class="btn btn-secondary">Volver
     </button>
 
     <img src="../../../../assets/imagen4.svg" alt="Pais" class="country-image-large mb-4">
     
     <h2 class="fw-semibold mb-4">¿Qué tipo de trámite estás buscando?</h2>
+    
     
     <button (click)="onClickShortDuration()" class="btn btn-outline-primary mt-4">Estancia de corta duración</button>
     <button (click)="onClickLongDuration()" class="btn btn-outline-primary mt-4">Estancia de larga duración</button>
@@ -17,12 +15,61 @@
 </div>
 
 
+
 <!-- Componente de visas de corta duración -->
 <div class="container-fluid"  *ngIf="showShortDuration">
-
-  <button (click)="volver()" class="back-button mt-4">Volver</button> 
+  <button (click)="volver()" class="btn btn-secondary">Volver</button> 
 
   <div class="custom-card text-center">
+    <img src="../../../../assets/imagen1.svg" alt="Pais" class="country-image-large mb-4">
+     
+    <h2 class="fw-semibold mb-4">Estancias de corta duración</h2>
+    
+    <h4>Elige una opción</h4>
+   
+    <button (click)="navigateToFaq('visa de turista')">Visa de turista</button>
+    <button (click)="navigateToFaq('trabajo')" class="btn btn-outline-primary mt-4">Visa de trabajo</button>
+    <button (click)="navigateToFaq('estudiante')" class="btn btn-outline-primary mt-4">Visa de estudiante</button>
+    <button (click)="navigateToFaq('voluntariado')" class="btn btn-outline-primary mt-4">Visa de voluntariado</button>
+    <button (click)="navigateToFaq('investigacion')" class="btn btn-outline-primary mt-4">Visa de investigación</button>
+  </div>
+</div>
+
+<!-- Componente de visas de larga duración --> 
+<div class="container-fluid" *ngIf="showLongDuration">
+  <button (click)="volver()" class="btn btn-secondary">Volver</button>
+  
+  <div class="custom-card text-center">
+    <img src="../../../../assets/imagen1.svg" alt="Pais" class="country-image-large mb-4">
+    
+    <h2 class="fw-semibold mb-4">Estancias de larga duración</h2>
+    <h4>Elige una opción</h4>
+    
+    <button (click)="navigateToFaq('no_lucrativa')" class="btn btn-outline-primary mt-4">Visa no lucrativa</button>
+    <button (click)="navigateToFaq('inversionista')" class="btn btn-outline-primary mt-4">Visa de inversionista</button>
+    <button (click)="navigateToFaq('reagrupacion_familiar')" class="btn btn-outline-primary mt-4">Reagrupación familiar</button>
+    
+    <button (click)="navigateToFaq('arraigo_social')" class="btn btn-outline-primary mt-4">Arraigo social</button>
+    <button (click)="navigateToFaq('arraigo_laboral')" class="btn btn-outline-primary mt-4">Arraigo laboral</button>
+    <button (click)="navigateToFaq('arraigo_familiar')" class="btn btn-outline-primary mt-4">Arraigo familiar</button>
+  </div>
+</div> 
+
+
+
+
+
+<!-- 
+
+dm
+
+ Componente de visas de corta duración 
+<div class="container-fluid"  *ngIf="showShortDuration">
+
+  <button (click)="volver()" class="btn btn-secondary">Volver</button> 
+
+  <div class="custom-card text-center">
+    <img src="../../../../assets/imagen1.svg" alt="Pais" class="country-image-large mb-4">
      
     <h2 class="fw-semibold mb-4">Estancias de corta duración</h2>
     
@@ -37,10 +84,10 @@
 </div>
 
 
-<!-- Componente de visas de larga duración --> 
+Componente de visas de larga duración 
 <div class="container-fluid" *ngIf="showLongDuration">
 
-  <button (click)="volver()" class="back-button mt-4">volver</button>
+  <button (click)="volver()" class="btn btn-secondary">Volver</button>
   
   <div class="custom-card text-center">
 
@@ -58,4 +105,4 @@
     <button class="btn btn-outline-primary mt-4">Arraigo familiar</button>
    
   </div>
-</div> 
+</div>  -->

@@ -1,0 +1,10 @@
+<h1>Preguntas Frecuentes</h1>
+
+<div *ngIf="faqs.length === 0">
+  No hay FAQs disponibles.
+</div>
+
+<div *ngFor="let faq of faqs" class="faq-item">
+  <h3>{{ faq.question }}</h3>
+  <p>{{ faq.answer }}</p>
+</div>

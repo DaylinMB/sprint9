@@ -2,6 +2,7 @@ import express, { Application, Request, Response } from 'express';
 import db from '../db/connection';
 import cors from 'cors';
 import routeCountry from '../routes/country';
+import routeFaq from '../routes/faq';
 
 class Server {
   private app: Application;
@@ -29,11 +30,12 @@ class Server {
       });
     });
     this.app.use('/api/country/', routeCountry);
+    this.app.use('/api/faq/', routeFaq);
   }
 
   midlewares() {
     //cors
-    this.app.use(cors(/*{ origin: 'http://localhost:4200/'}*/));
+    this.app.use(cors());
 
     //Parsear al body
     this.app.use(express.json());

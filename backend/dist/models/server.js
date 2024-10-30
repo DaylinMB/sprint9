@@ -16,6 +16,7 @@ const express_1 = __importDefault(require("express"));
 const connection_1 = __importDefault(require("../db/connection"));
 const cors_1 = __importDefault(require("cors"));
 const country_1 = __importDefault(require("../routes/country"));
+const faq_1 = __importDefault(require("../routes/faq"));
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
@@ -37,10 +38,11 @@ class Server {
             });
         });
         this.app.use('/api/country/', country_1.default);
+        this.app.use('/api/faq/', faq_1.default);
     }
     midlewares() {
         //cors
-        this.app.use((0, cors_1.default)( /*{ origin: 'http://localhost:4200/'}*/));
+        this.app.use((0, cors_1.default)());
         //Parsear al body
         this.app.use(express_1.default.json());
     }

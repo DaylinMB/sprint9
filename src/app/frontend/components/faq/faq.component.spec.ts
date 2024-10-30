@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ShortDurationComponent } from './short-duration.component';
+import { FaqComponent } from './faq.component';
 
-describe('ShortDurationComponent', () => {
-  let component: ShortDurationComponent;
-  let fixture: ComponentFixture<ShortDurationComponent>;
+describe('FaqComponent', () => {
+  let component: FaqComponent;
+  let fixture: ComponentFixture<FaqComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ShortDurationComponent]
+      imports: [FaqComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ShortDurationComponent);
+    fixture = TestBed.createComponent(FaqComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
