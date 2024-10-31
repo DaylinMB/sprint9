@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-10-2024 a las 13:36:53
+-- Tiempo de generación: 31-10-2024 a las 16:02:56
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -77,9 +77,12 @@ CREATE TABLE `faq` (
 
 INSERT INTO `faq` (`id_faq`, `process_id`, `question`, `answer`) VALUES
 (1, 8, '¿Cuánto se demora la visa de estudiante para España desde Colombia?', 'El tiempo de procesamiento de una visa de estudiante para España desde Colombia puede variar dependiendo de varios factores, pero en general, suele demorar entre 1 y 2 meses. Este plazo incluye la revisión de documentos, la verificación de los requisitos,'),
-(8, 2, '¿Cuánto se demora la visa de turista para España desde %PAIS%?', 'Los ciudadanos de%PAIS% no necesitan visa de turista para ingresar a España o a cualquier país del espacio Schengen por estancias cortas, de hasta 90 días en un periodo de 180 días. Esto aplica para viajes de turismo, negocios, o visitas familiares.\r\n\r\nSi'),
+(8, 2, '¿Cuánto se demora la visa de turista para España desde colombia?', 'Los ciudadanos de %PAIS% no necesitan visa de turista para ingresar a España o a cualquier país del espacio Schengen por estancias cortas, de hasta 90 días en un periodo de 180 días. Esto aplica para viajes de turismo, negocios, o visitas familiares.\n\nSi'),
 (16, 1, 'Que países de Latinoamérica no necesitan visa Schengen para viajar a España?', 'Ciertos países de Latinoamérica tienen acuerdos con la Unión Europea que permiten a sus ciudadanos viajar a los países Schengen sin necesidad de visa para estancias cortas (hasta 90 días en un período de 180 días). Esto facilita los viajes por turismo, ne'),
-(20, 2, 'Que países de Latinoamérica necesitan visa Schengen para viajar a España?', 'Los países de Latinoamérica cuyos ciudadanos necesitan visa para entrar a España (y al espacio Schengen en general) son los siguientes:\r\n\r\nBolivia,\r\nCuba,\r\nEcuador,\r\ny República Dominicana\r\n\r\nLos ciudadanos de estos países deben solicitar una visa Schenge');
+(20, 2, 'Que países de Latinoamérica necesitan visa Schengen para viajar a España?', 'Los países de Latinoamérica cuyos ciudadanos necesitan visa para entrar a España (y al espacio Schengen en general) son los siguientes:\r\n\r\nBolivia,\r\nCuba,\r\nEcuador,\r\ny República Dominicana\r\n\r\nLos ciudadanos de estos países deben solicitar una visa Schenge'),
+(21, 3, '¿Cómo puedo solicitar la Visa de trabajo?', 'se necesitajdbcñajskec '),
+(22, 3, '¿Qué requisitos necesito para la Visa de turista?', 'Se demora de 3 a 4 meses'),
+(23, 3, '¿Cuánto se demora la visa de turista para España desde Panamá?', 'knfvjka m');
 
 -- --------------------------------------------------------
 
@@ -208,7 +211,7 @@ ALTER TABLE `country`
 -- AUTO_INCREMENT de la tabla `faq`
 --
 ALTER TABLE `faq`
-  MODIFY `id_faq` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_faq` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT de la tabla `lawyers`
