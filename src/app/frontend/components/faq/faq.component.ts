@@ -1,17 +1,18 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { FaqService } from '../../services/faq.service';
 import { Faq } from '../../interfaces/faq';
-import { StayComponent } from '../stay/stay.component';
+
+import { ActivatedRoute, Router } from '@angular/router';
 import { GentiliciosService } from '../../services/gentilicios.service';
+import { HeadfaqComponent } from "../headfaq/headfaq.component";
 
 
 @Component({
   selector: 'app-faq',
   standalone: true,
-  imports: [ CommonModule, StayComponent ],
+  imports: [CommonModule, HeadfaqComponent],
   templateUrl: './faq.component.html',
   styleUrls: ['./faq.component.css']
 })
@@ -34,6 +35,7 @@ export class FaqComponent implements OnInit {
         this.faqs = data;
         this.filteredFaqs = data;
         this.route.queryParams.subscribe(params => {
+          console.log("PARAMS: ", params)
           this.selectedVisaType = params['type'] || '';
           this.selectedCountry = params['country'] || '';
           this.applyFilters();

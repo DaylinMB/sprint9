@@ -1,0 +1,28 @@
+.top-section {
+  /* flex: 1 1 40%;  */
+  padding: 15px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 45px;
+  margin: 10px;
+}
+
+h4 {
+  text-align: center;
+  padding: 15px;
+}
+
+.faq-image-large {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  object-fit: cover;
+}
+
+button.btn-primary{
+    background-color: #6492FF;
+
+}

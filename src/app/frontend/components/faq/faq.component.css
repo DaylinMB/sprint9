@@ -15,30 +15,6 @@ body {
   flex-direction: column;
 }
 
-.top-section {
-  flex: 1 1 40%; /* Para que ocupe un 40% de la altura total */
-  padding: 15px;
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 45px;
-  margin: 10px;
-}
-
-h4 {
-  text-align: center;
-  padding: 15px;
-}
-
-.faq-image-large {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  object-fit: cover;
-}
-
 button.btn-secondary {
   position: fixed;
   top: 10px;
@@ -50,11 +26,6 @@ button.btn-secondary {
   font-size: 1rem;
   cursor: pointer;
 }
-/****************************************************/
-
-
-
-
 
 .bottom-section {
   flex: 1 1 60%;

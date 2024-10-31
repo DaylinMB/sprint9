@@ -7,6 +7,7 @@ import { FaqComponent } from './frontend/components/faq/faq.component';
 export const routes: Routes = [
     
     { path: '', component: CountriesComponent },
+    
     { path: 'stay', component: StayComponent },
     { path: 'stay/short', component: StayComponent }, 
     { path: 'stay/long', component: StayComponent }, 

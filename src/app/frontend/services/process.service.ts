@@ -2,25 +2,21 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { Observable } from 'rxjs';
-import { Faq } from '../interfaces/faq';
+import { Process } from '../interfaces/process';
 
 @Injectable({
   providedIn: 'root',
 })
-export class FaqService {
+export class ProcessService {
   private myAppUrl: string;
   private myApiUrl: string;
 
   constructor(private http: HttpClient) {
     this.myAppUrl = environment.endpoint;
-    this.myApiUrl = 'api/faq/';
+    this.myApiUrl = 'api/process/';
   }
 
-  getFaqs(): Observable<Faq[]> {
-    return this.http.get<Faq[]>(`${this.myAppUrl}${this.myApiUrl}`);
-  }
-
-  getFaqsbyProcessId(processId: number): Observable<Faq[]> {
-    return this.http.get<Faq[]>(`${this.myAppUrl}${this.myApiUrl}${processId}`);
-  }
+  getProcess(): Observable<Process[]> {
+    return this.http.get<Process[]>(`${this.myAppUrl}${this.myApiUrl}`);
+  } 
 }

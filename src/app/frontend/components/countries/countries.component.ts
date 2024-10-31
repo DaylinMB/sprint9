@@ -9,7 +9,7 @@ import { StayComponent } from '../stay/stay.component';
 @Component({
   selector: 'app-countries',
   standalone: true,
-  imports: [CommonModule, StayComponent, RouterModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './countries.component.html',
   styleUrl: './countries.component.css',
 })
