@@ -1,118 +1,59 @@
-<div class="container-fluid">
-  <button routerLink="/" class="btn btn-secondary">Volver</button>
-
+<div class="container-fluid"  *ngIf="!showDuration">
   <div class="custom-card text-center">
-    <div class="col-12 col-md-6 d-flex justify-content-center align-items-center mb-4">
-      <img src="../../../../assets/imagen5.svg" alt="Pais" class="country-image-large mb-4">
-    </div>
+    <button routerLink="/" class="btn btn-secondary">Volver
+    </button>
 
+    <img src="../../../../assets/imagen5.svg" alt="Pais" class="country-image-large mb-4">
+    
     <h2 class="fw-semibold mb-4">¿Qué tipo de trámite estás buscando?</h2>
-
-    <div class="form-group mb-3 d-flex flex-wrap justify-content-center">
-      <!-- Botones generados a partir de listProcess -->
-      <button *ngFor="let item of listProcess" 
-              class="btn btn-outline-primary m-2" 
-              (click)="onProcessSelected(item.name)">
-        {{ item.name }}
-      </button>
-    </div>
-
-    <button routerLink="/stay" class="btn btn-primary">Siguiente</button>
+    
+    
+    <button (click)="onClickDuration('short')" class="btn btn-outline-primary mt-4">Estancia de corta duración</button>
+    <button (click)="onClickDuration('long')" class="btn btn-outline-primary mt-4">Estancia de larga duración</button>
+    
   </div>
 </div>
 
 
 
+<!-- Duración -->
+<div class="container-fluid" *ngIf="showDuration">
+  <button (click)="volver()" class="btn btn-secondary">Volver</button>
+
+  <div class="custom-card text-center">
+    <img src="../../../../assets/imagen8.svg" alt="Pais" class="country-image-large mb-4">
+
+    <h2 class="fw-semibold mb-4">Estancias de {{ selectedDuration }} duración</h2>
+
+    <h4>Elige una opción</h4>
+
+    <div class="form-group mb-3">
+      <select class="form-select custom-select" (change)="onSelectChange($event)">
+        <option value="" disabled selected>Selecciona una opción</option>
+        <option *ngFor="let item of listProcesses" [value]="item.id_process || ''">
+          {{ item.name }}
+        </option>
+      </select>
+    </div>
+  </div>
+</div>
 
 
 
 <!-- 
-<div class="container-fluid"  *ngIf="!showShortDuration && !showLongDuration">
-    <button (click)="onClickShortDuration()" class="btn btn-outline-primary mt-4">Estancia de corta duración</button>
-    <button (click)="onClickLongDuration()" class="btn btn-outline-primary mt-4">Estancia de larga duración</button>
-    
-+
-
- -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- 
-<div class="container-fluid"  *ngIf="showShortDuration">
+<div class="container-fluid"  *ngIf="showDuration">
 
   <button (click)="volver()" class="btn btn-secondary">Volver</button> 
 
   <div class="custom-card text-center">
-    <div class="col-12 col-md-6 d-flex justify-content-center align-items-center mb-4">
-      <img src="../../../../assets/imagen8.svg" alt="Pais" class="country-image-large mb-4">
-    </div>
+    <img src="../../../../assets/imagen8.svg" alt="Pais" class="country-image-large mb-4">
      
-    <h2 class="fw-semibold mb-4">Estancias de corta duración</h2>
+    <h2 class="fw-semibold mb-4">Estancias de {{selectedDuration}} duración</h2>
     
     <h4>Elige una opción</h4>
-   
-    <button class="btn btn-outline-primary mt-4" (click)="navigateToFaq('visa de turista')">Visa de turista</button>
 
-    <button (click)="navigateToFaq('Visa de trabajo')" class="btn btn-outline-primary mt-4">Visa de trabajo</button>
-    <button (click)="navigateToFaq('Visa de estudiante')" class="btn btn-outline-primary mt-4">Visa de estudiante</button>
-    <button (click)="navigateToFaq('Visa de voluntariado')" class="btn btn-outline-primary mt-4">Visa de voluntariado</button>
-    <button (click)="navigateToFaq('Visa de investigación')" class="btn btn-outline-primary mt-4">Visa de investigación</button>
-  </div>
-</div>
-
-
-
-<div class="container-fluid" *ngIf="showLongDuration">
-  <button (click)="volver()" class="btn btn-secondary">Volver</button>
-  
-  <div class="custom-card text-center">
-    <div class="col-12 col-md-6 d-flex justify-content-center align-items-center mb-4">
-      <img src="../../../../assets/imagen7.svg" alt="Pais" class="country-image-large mb-4">
+    <div *ngFor="let item of listProcesses">
+      <button (click)="navigateToFaq(item.id_process || '')" class="btn btn-outline-primary mt-4">{{item.name}}</button>
     </div>
-    
-    <h2 class="fw-semibold mb-4">Estancias de larga duración</h2>
-    <h4>Elige una opción</h4>
-    
-    <button (click)="navigateToFaq('no_lucrativa')" class="btn btn-outline-primary mt-4">Visa no lucrativa</button>
-    <button (click)="navigateToFaq('inversionista')" class="btn btn-outline-primary mt-4">Visa de inversionista</button>
-    <button (click)="navigateToFaq('reagrupacion_familiar')" class="btn btn-outline-primary mt-4">Reagrupación familiar</button>
-    
-    <button (click)="navigateToFaq('arraigo_social')" class="btn btn-outline-primary mt-4">Arraigo social</button>
-    <button (click)="navigateToFaq('arraigo_laboral')" class="btn btn-outline-primary mt-4">Arraigo laboral</button>
-    <button (click)="navigateToFaq('arraigo_familiar')" class="btn btn-outline-primary mt-4">Arraigo familiar</button>
   </div>
-</div> 
- -->
+</div> -->

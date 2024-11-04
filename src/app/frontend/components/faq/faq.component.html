@@ -1,5 +1,4 @@
 <div class="container">
-
     <button (click)="volver()" class="btn btn-secondary mb-3">Volver</button>
     <app-headfaq></app-headfaq>
     <div class="bottom-section">
@@ -10,7 +9,6 @@
                     {{ faq.question }}
                 </button>
 
-                
                 <div [id]="'collapse' + i" class="accordion-collapse collapse" [class.show]="openIndex === i" [attr.aria-labelledby]="'heading' + i" data-bs-parent="#accordionExample">
                     <div class="accordion-body custom-accordion-body">
                         <p>{{ faq.answer }}</p>
@@ -19,5 +17,4 @@
             </div>
         </div>
     </div>
-
 </div>

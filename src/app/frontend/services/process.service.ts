@@ -19,4 +19,8 @@ export class ProcessService {
   getProcess(): Observable<Process[]> {
     return this.http.get<Process[]>(`${this.myAppUrl}${this.myApiUrl}`);
   } 
+
+  getProcessesByDuration(duration: string): Observable<Process[]> {
+    return this.http.get<Process[]>(`${this.myAppUrl}${this.myApiUrl}${duration}`);
+  }
 }

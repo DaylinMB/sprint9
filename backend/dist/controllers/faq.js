@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getFaqs = void 0;
+exports.getFaqsByProcessId = exports.getFaqs = void 0;
 const faq_1 = __importDefault(require("../models/faq"));
 const getFaqs = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -24,3 +24,17 @@ const getFaqs = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.getFaqs = getFaqs;
+const getFaqsByProcessId = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const faqs = yield faq_1.default.findAll({
+            where: {
+                process_id: req.params.processId,
+            },
+        });
+        res.json(faqs);
+    }
+    catch (error) {
+        res.status(500).json({ msg: 'Error fetching FAQs', error });
+    }
+});
+exports.getFaqsByProcessId = getFaqsByProcessId;

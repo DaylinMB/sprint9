@@ -3,6 +3,7 @@ import db from '../db/connection';
 import cors from 'cors';
 import routeCountry from '../routes/country';
 import routeFaq from '../routes/faq';
+import routeProcess from '../routes/process';
 
 class Server {
   private app: Application;
@@ -31,6 +32,8 @@ class Server {
     });
     this.app.use('/api/country/', routeCountry);
     this.app.use('/api/faq/', routeFaq);
+    this.app.use('/api/process/', routeProcess);
+
   }
 
   midlewares() {

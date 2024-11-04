@@ -30,16 +30,18 @@ export class FaqComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.faqService.getFaqs().subscribe({
+    // Read query params
+    this.route.queryParamMap.subscribe(params => {
+      const selectedIdProcess = params.get('selectedIdProcess');
+      this.populateFaqsByProcessId(Number(selectedIdProcess));
+    });
+
+  }
+
+  populateFaqsByProcessId(processId: number): void {
+    this.faqService.getFaqsByProcessId(processId).subscribe({
       next: (data) => {
-        this.faqs = data;
         this.filteredFaqs = data;
-        this.route.queryParams.subscribe(params => {
-          console.log("PARAMS: ", params)
-          this.selectedVisaType = params['type'] || '';
-          this.selectedCountry = params['country'] || '';
-          this.applyFilters();
-        });
       },
       error: (error) => {
         console.error("Error fetching FAQs:", error);
@@ -52,26 +54,7 @@ export class FaqComponent implements OnInit {
     this.openIndex = this.openIndex === index ? null : index;
   }
 
-
- 
-  
-  applyFilters(): void {
-    this.filteredFaqs = this.faqs.filter(faq => {
-      const matchesVisaType = this.selectedVisaType
-        ? faq.question.toLowerCase().includes(this.selectedVisaType.toLowerCase())
-        : true;
-      const matchesCountry = this.selectedCountry
-        ? faq.question.toLowerCase().includes(this.selectedCountry.toLowerCase()) || faq.answer.toLowerCase().includes(this.selectedCountry.toLowerCase())
-        : true;
-      return matchesVisaType && matchesCountry;
-    });
-  }
-  
-  navigateToFaq() {
-    this.router.navigate(['/faq'], { queryParams: { type: this.selectedVisaType, country: this.selectedCountry } });
-  }
-
   volver(): void {
-    this.router.navigate(['/stay']); 
+    this.router.navigate(['/stay']);
   }
 }

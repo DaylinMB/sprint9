@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { FaqComponent } from '../faq/faq.component';
 import { Process } from '../../interfaces/process';
@@ -15,29 +16,45 @@ import { ProcessService } from '../../services/process.service';
   styleUrls: ['./stay.component.css']
 })
 export class StayComponent {
-  listProcess: Process[] = [];
-  @Output() processSelected = new EventEmitter<string>();
+  showDuration: boolean = false;
+  selectedDuration: string = '';
+  selectedCountry: string = '';
+  selectedVisaType: string = '';
+  listProcesses: Process[] = [];
 
-  constructor(
-    private _processService: ProcessService,
-  ) {}
+  constructor(private router: Router, private _processService: ProcessService) { }
 
-  ngOnInit() {
-    this._processService.getProcess().subscribe({
-      next: (data) => {
-        console.log('Datos recibidos:', data); // Añade esta línea
-        this.listProcess = data;
-      },
-      error: (err) => {
-        console.error('Error al cargar procesos:', err);
-      }
+
+  onCountrySelect(country: string) {
+    this.selectedCountry = country;
+  }
+
+  
+  onClickDuration(duration: string) {
+    this.selectedDuration = duration === 'short' ? 'corta' : 'larga';
+    this._processService.getProcessesByDuration(duration).subscribe((data: Process[]) => {
+      this.listProcesses = data;
+      this.showDuration = true;
     });
   }
-  
-  
 
-  onProcessSelected(process: string) {
-    console.log('Proceso seleccionado:', process);
-    this.processSelected.emit(process);
+  volver() {
+    this.router.navigate(['/stay']);
+    this.showDuration = false;
+  }
+
+  onSelectChange(event: Event) {
+    const target = event.target as HTMLSelectElement;
+    const selectedIdProcess = target.value;
+  
+    if (selectedIdProcess) {
+      this.navigateToFaq(selectedIdProcess);
+    }
+  }
+  
+  navigateToFaq(selectedIdProcess: string) {
+    if (selectedIdProcess) {
+      this.router.navigate(['/faq'], { queryParams: { selectedIdProcess } });
+    }
   }
 }

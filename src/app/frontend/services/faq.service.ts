@@ -20,7 +20,7 @@ export class FaqService {
     return this.http.get<Faq[]>(`${this.myAppUrl}${this.myApiUrl}`);
   }
 
-  getFaqsbyProcessId(processId: number): Observable<Faq[]> {
+  getFaqsByProcessId(processId: number): Observable<Faq[]> {
     return this.http.get<Faq[]>(`${this.myAppUrl}${this.myApiUrl}${processId}`);
   }
 }
