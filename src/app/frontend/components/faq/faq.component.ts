@@ -1,13 +1,10 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { FaqService } from '../../services/faq.service';
 import { Faq } from '../../interfaces/faq';
-
 import { ActivatedRoute, Router } from '@angular/router';
-import { GentiliciosService } from '../../services/gentilicios.service';
 import { HeadfaqComponent } from "../headfaq/headfaq.component";
-
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-faq',
@@ -22,24 +19,42 @@ export class FaqComponent implements OnInit {
   selectedCountry: string = '';
   selectedVisaType: string = '';
   openIndex: number | null = null; 
+  showHeadfaq: boolean = true;
+
 
   constructor(
     private faqService: FaqService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private location: Location
   ) {}
 
   ngOnInit(): void {
     // Read query params
     this.route.queryParamMap.subscribe(params => {
       const selectedIdProcess = params.get('selectedIdProcess');
-      this.populateFaqsByProcessId(Number(selectedIdProcess));
+      const selectedCountryId = Number(params.get('selectedCountryId'));
+
+      if (selectedIdProcess && selectedCountryId) {
+        this.populateFaqsByProcessAndCountry(Number(selectedIdProcess), selectedCountryId);
+      }
     });
 
   }
 
+  populateFaqsByProcessAndCountry(processId: number, countryId: number): void {
+    this.faqService.getFaqsByProcessAndCountry(processId, countryId).subscribe({
+      next: (data) => {
+        this.filteredFaqs = data;
+      },
+      error: (error) => {
+        console.error("Error fetching FAQs:", error);
+      }
+    });
+  }
+
   populateFaqsByProcessId(processId: number): void {
-    this.faqService.getFaqsByProcessId(processId).subscribe({
+    this.faqService.getFaqsbyProcessId(processId).subscribe({
       next: (data) => {
         this.filteredFaqs = data;
       },
@@ -50,11 +65,11 @@ export class FaqComponent implements OnInit {
   }
 
   toggleAccordion(index: number): void {
-    // Alternar el índice abierto o cerrarlo si ya estaba abierto
     this.openIndex = this.openIndex === index ? null : index;
   }
 
   volver(): void {
-    this.router.navigate(['/stay']);
+    this.location.back(); 
   }
+
 }

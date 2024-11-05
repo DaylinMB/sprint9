@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { CountryService } from '../../services/country.service';
 import { Country } from '../../interfaces/country';
-import { StayComponent } from '../stay/stay.component';
 
 @Component({
   selector: 'app-countries',
@@ -15,13 +15,13 @@ import { StayComponent } from '../stay/stay.component';
 })
 export class CountriesComponent {
   listCountries: Country[] = [];
-  @Output() countrySelected = new EventEmitter<string>();
+  countryIdSelected: number = 0;
 
   ngOnInit(): void {
     this.getCountriesData();
   }
 
-  constructor(private _countryService: CountryService) {}
+  constructor(private router: Router, private _countryService: CountryService) {}
 
   populateDropdown(data: Country[]) {
     this.listCountries = data.sort((a, b) => a.name.localeCompare(b.name));
@@ -33,9 +33,11 @@ export class CountriesComponent {
     });
   }
 
-  onCountrySelect(country: string) {
-    this.countrySelected.emit(country);
+  setCountry(countryId: string) {
+    this.countryIdSelected = Number(countryId);
   }
 
-  
+  onClickNext() {
+    this.router.navigate(['/stay'], { queryParams: { selectedCountryId: this.countryIdSelected } });
+  }
 }

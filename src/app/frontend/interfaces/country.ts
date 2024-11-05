@@ -1,5 +1,5 @@
 export interface Country {
-    id?: string;
+    id_country: number;
     name: string;
     demonym: string;
 }

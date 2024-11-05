@@ -31,6 +31,7 @@ class Server {
       });
     });
     this.app.use('/api/country/', routeCountry);
+    this.app.use('/api/countryId/', routeCountry);
     this.app.use('/api/faq/', routeFaq);
     this.app.use('/api/process/', routeProcess);
 

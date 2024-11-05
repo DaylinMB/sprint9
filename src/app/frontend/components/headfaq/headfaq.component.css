@@ -1,6 +1,6 @@
 .top-section {
   /* flex: 1 1 40%;  */
-  padding: 15px;
+  padding: 10px;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -8,21 +8,40 @@
   align-items: center;
   border-radius: 45px;
   margin: 10px;
+  height: 50vh;
 }
 
 h4 {
   text-align: center;
-  padding: 15px;
+  font-size: 1.3rem;
+  padding: 20px;
+  margin-top: 40px;
 }
 
 .faq-image-large {
-  width: 100%;
+  width: 70%;
   max-width: 300px;
   height: auto;
   object-fit: cover;
 }
 
-button.btn-primary{
-    background-color: #6492FF;
+button.btn-primary {
+  background-color: #6492ff;
+  border-radius: 11px;
+}
 
+
+.close-btn {
+  position: absolute;
+  top: 5.4rem;
+  right: 2.8rem;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #6492ff;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #6492ff;
 }

@@ -4,5 +4,7 @@ const express_1 = require("express");
 const faq_1 = require("../controllers/faq");
 const router = (0, express_1.Router)();
 router.get('/', faq_1.getFaqs);
-router.get('/:processId', faq_1.getFaqsByProcessId);
+router.get('/filter/:processId/:countryId', faq_1.getFaqsByProcessAndCountry);
+router.get('/process/:processId', faq_1.getFaqsByProcessId);
+router.get('/country/:countryId', faq_1.getFaqsByCountryId);
 exports.default = router;

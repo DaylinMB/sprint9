@@ -39,6 +39,7 @@ class Server {
             });
         });
         this.app.use('/api/country/', country_1.default);
+        this.app.use('/api/countryId/', country_1.default);
         this.app.use('/api/faq/', faq_1.default);
         this.app.use('/api/process/', process_1.default);
     }

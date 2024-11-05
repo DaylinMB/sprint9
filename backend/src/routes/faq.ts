@@ -1,9 +1,12 @@
 import { Router } from 'express';
-import { getFaqs, getFaqsByProcessId } from '../controllers/faq';
+import { getFaqs, getFaqsByProcessId, getFaqsByCountryId, getFaqsByProcessAndCountry } from '../controllers/faq';
 
 const router = Router();
 
 router.get('/', getFaqs);
-router.get('/:processId', getFaqsByProcessId);
+router.get('/filter/:processId/:countryId', getFaqsByProcessAndCountry);
+router.get('/process/:processId', getFaqsByProcessId);
+router.get('/country/:countryId', getFaqsByCountryId);
+
 
 export default router;

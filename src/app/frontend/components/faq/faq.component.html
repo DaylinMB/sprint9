@@ -1,6 +1,8 @@
 <div class="container">
     <button (click)="volver()" class="btn btn-secondary mb-3">Volver</button>
-    <app-headfaq></app-headfaq>
+
+    <app-headfaq *ngIf="showHeadfaq" (closeEvent)="showHeadfaq = false"></app-headfaq>
+
     <div class="bottom-section">
         <div class="accordion" id="accordionExample">
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-headfaq',
@@ -9,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class HeadfaqComponent {
 
+  @Output() closeEvent = new EventEmitter<void>();
+
+  close() {
+    this.closeEvent.emit();
+}
 }
