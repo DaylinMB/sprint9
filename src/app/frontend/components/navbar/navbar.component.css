@@ -1,3 +1,9 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  overflow: hidden;
+}
+
 .custom-navbar {
   background-color: #6190FF !important;
 }

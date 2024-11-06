@@ -5,11 +5,12 @@ import { Router } from '@angular/router';
 
 import { CountryService } from '../../services/country.service';
 import { Country } from '../../interfaces/country';
+import { NavbarComponent } from "../navbar/navbar.component";
 
 @Component({
   selector: 'app-countries',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, NavbarComponent],
   templateUrl: './countries.component.html',
   styleUrl: './countries.component.css',
 })

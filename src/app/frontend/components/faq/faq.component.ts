@@ -5,11 +5,13 @@ import { Faq } from '../../interfaces/faq';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HeadfaqComponent } from "../headfaq/headfaq.component";
 import { Location } from '@angular/common';
+import { NavbottomComponent } from "../navbottom/navbottom.component";
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-faq',
   standalone: true,
-  imports: [CommonModule, HeadfaqComponent],
+  imports: [CommonModule, HeadfaqComponent, NavbottomComponent, NavbarComponent],
   templateUrl: './faq.component.html',
   styleUrls: ['./faq.component.css']
 })
@@ -19,7 +21,6 @@ export class FaqComponent implements OnInit {
   selectedCountry: string = '';
   selectedVisaType: string = '';
   openIndex: number | null = null; 
-  showHeadfaq: boolean = true;
 
 
   constructor(
@@ -68,8 +69,8 @@ export class FaqComponent implements OnInit {
     this.openIndex = this.openIndex === index ? null : index;
   }
 
-  volver(): void {
-    this.location.back(); 
-  }
+  // volver(): void {
+  //   this.location.back(); 
+  // }
 
 }

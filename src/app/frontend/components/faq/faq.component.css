@@ -7,17 +7,18 @@ body {
   background-color: #dde4f1;
 }
 
-.container {
+.container-fluid {
   height: 100vh;
-  background-color: #dde4f1; /* Color de fondo */
-  padding-top: 4rem;
+  background-color: #dde4f1; 
+  padding-top: 1rem;
   display: flex;
   flex-direction: column;
+  font-family: 'Poppins', sans-serif;
 }
 
 button.btn-secondary {
-  position: fixed;
-  top: 10px;
+  position:absolute;
+  top: 70px;
   left: 10px;
   z-index: 1050;
   background: none;
@@ -25,6 +26,12 @@ button.btn-secondary {
   color: #6492ff;
   font-size: 1rem;
   cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+button.btn-secondary:hover {
+  text-decoration: underline;
 }
 
 .bottom-section {
@@ -39,7 +46,6 @@ button.btn-secondary {
   overflow-y: auto;
 }
 
-
 .accordion-body {
   display: flex;
   justify-content: center;
@@ -48,22 +54,21 @@ button.btn-secondary {
 }
 
 .custom-accordion-item {
-  background-color: #e5dede;
-  border: 0px solid #ffffff;
+  background-color: none;
+  border: 0px solid;
   border-radius: 20px; 
   margin-bottom: 1rem;
   overflow: hidden;
 }
 
 .custom-accordion-button {
-
   background-color: #ffffff;
   color: #6492ff;
   border: none;
   font-weight: 500;
   width: 100%;
   text-align: left;
-  border-radius: 8px;
+  border-radius: 9px;
 }
 
 .custom-accordion-body {
@@ -73,6 +78,7 @@ button.btn-secondary {
   border-top: 1px solid #ced4da;
   border-radius: 0 0 8px 8px;
   text-align: left;
+  padding: 2px;
 }
 
 .accordion-body {
@@ -80,7 +86,3 @@ button.btn-secondary {
   max-height: 200px;
   overflow: hidden;
 }
-
-
-
-/****************************************************/

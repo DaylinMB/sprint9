@@ -69,10 +69,15 @@ export class StayComponent implements OnInit{
 
   navigateToFaq(selectedIdProcess: string) {
     if (selectedIdProcess) {
-      this.router.navigate(['/faq'], { queryParams: { selectedIdProcess, 
-      selectedCountryId: this.selectedCountryId
-    } });
+      this.router.navigate(['/tab'], {
+        queryParams: {
+          selectedIdProcess,
+          selectedCountryId: this.selectedCountryId,
+          selectedTab: 'faqs' // Pestaña activa
+        }
+      });
     }
   }
+  
   
 }

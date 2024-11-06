@@ -1,10 +1,12 @@
-<div class="container">
-    <button (click)="volver()" class="btn btn-secondary mb-3">Volver</button>
 
-    <app-headfaq *ngIf="showHeadfaq" (closeEvent)="showHeadfaq = false"></app-headfaq>
+<div class="container-fluid">
+    <!-- <button (click)="volver()" class="btn btn-secondary mb-3">Volver</button> -->
 
     <div class="bottom-section">
         <div class="accordion" id="accordionExample">
+            <p *ngIf="filteredFaqs.length === 0" class="text-center text-muted">
+                No se encuentran preguntas con esta referencia en.
+            </p>
 
             <div *ngFor="let faq of filteredFaqs; let i = index" class="accordion-item custom-accordion-item">
                 <button (click)="toggleAccordion(i)" class="accordion-button custom-accordion-button" [class.collapsed]="openIndex !== i" type="button">
@@ -20,3 +22,4 @@
         </div>
     </div>
 </div>
+<app-navbottom></app-navbottom>

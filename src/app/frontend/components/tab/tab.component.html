@@ -1,0 +1,73 @@
+<app-navbar></app-navbar>
+
+<app-headfaq *ngIf="showHeadfaq" (closeEvent)="showHeadfaq = false"></app-headfaq>
+
+<section class="py-0">
+  <ul class="nav nav-tabs nav-justified home-page-tab" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button
+        [ngClass]="{'active': selectedTab === 'editors-pick'}"
+        class="nav-link text-start d-flex align-items-start"
+        id="editors-pick-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#editors-pick"
+        type="button"
+        role="tab"
+        aria-controls="editors-pick"
+        aria-selected="true"
+      >
+        <div class="flex-1">
+          <div class="fs--1 fs-sm-0 fs-lg-1 mb-0 fw-bold">Abogados</div>
+        </div>
+      </button>
+    </li>
+
+    <li class="nav-item" role="presentation">
+      <button
+        [ngClass]="{'active': selectedTab === 'faqs'}"
+        class="nav-link text-start d-flex align-items-start"
+        id="faqs-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#faqs"
+        type="button"
+        role="tab"
+        aria-controls="faqs"
+        aria-selected="false"
+      >
+        <div class="flex-1">
+          <div class="fs--1 fs-sm-0 fs-lg-1 mb-0 fw-bold">Faqs</div>
+        </div>
+      </button>
+    </li>
+
+    <li class="nav-item" role="presentation">
+      <button
+        [ngClass]="{'active': selectedTab === 'about-us'}"
+        class="nav-link text-start d-flex align-items-start"
+        id="about-us-tab"
+        data-bs-toggle="tab"
+        data-bs-target="#about-us"
+        type="button"
+        role="tab"
+        aria-controls="about-us"
+        aria-selected="false"
+      >
+        <div class="flex-1">
+          <div class="fs--1 fs-sm-0 fs-lg-1 mb-0 fw-bold">About Us</div>
+        </div>
+      </button>
+    </li>
+  </ul>
+
+  <div class="tab-content mb-4" id="myTabContent">
+    <div class="tab-pane pt-4 pt-md-5 fade" [ngClass]="{'active show': selectedTab === 'editors-pick'}" id="editors-pick" role="tabpanel" aria-labelledby="editors-pick-tab">
+      <app-lawyers></app-lawyers>
+    </div>
+    <div class="tab-pane pt-4 pt-md-5 fade" [ngClass]="{'active show': selectedTab === 'faqs'}" id="faqs" role="tabpanel" aria-labelledby="faqs-tab">
+      <app-faq></app-faq>
+    </div>
+    <div class="tab-pane pt-4 pt-md-5 fade" [ngClass]="{'active show': selectedTab === 'about-us'}" id="about-us" role="tabpanel" aria-labelledby="about-us-tab">
+      <!-- Contenido de About Us -->
+    </div>
+  </div>
+</section>
