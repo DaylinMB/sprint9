@@ -1,0 +1,30 @@
+
+
+.about {
+    font-family: 'Poppins', sans-serif;
+    color: #565657;
+    margin: 10px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    color: #565657;
+    font-size: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.container {
+    padding: 10px;
+}
+
+@media (max-width: 576px) {
+    .about {
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 18px;
+    }
+}

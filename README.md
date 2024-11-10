@@ -42,7 +42,7 @@ Para configurar el proyecto, sigue estos pasos:
 
 3. **Inicia el servidor backend:**  ▶️
 - **nodemon dist/index.js** Para compilar la base de datos.
-- **tsc - watch** Para compilar el javascript.
+- **tsc -watch** Para compilar el javascript.
 
 
 4. **Inicia la aplicación Angular:**  ▶️

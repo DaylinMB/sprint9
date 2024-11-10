@@ -2,7 +2,7 @@
 
 <app-headfaq *ngIf="showHeadfaq" (closeEvent)="showHeadfaq = false"></app-headfaq>
 
-<section class="py-0">
+<section class="container py-0">
   <ul class="nav nav-tabs nav-justified home-page-tab" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
       <button
@@ -41,22 +41,22 @@
     </li>
 
     <li class="nav-item" role="presentation">
-      <button
-        [ngClass]="{'active': selectedTab === 'about-us'}"
-        class="nav-link text-start d-flex align-items-start"
-        id="about-us-tab"
-        data-bs-toggle="tab"
-        data-bs-target="#about-us"
-        type="button"
-        role="tab"
-        aria-controls="about-us"
-        aria-selected="false"
-      >
-        <div class="flex-1">
-          <div class="fs--1 fs-sm-0 fs-lg-1 mb-0 fw-bold">About Us</div>
-        </div>
-      </button>
-    </li>
+        <button
+          [ngClass]="{'active': selectedTab === 'about-us'}"
+          class="nav-link text-start d-flex align-items-start"
+          id="about-us-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#about-us"
+          type="button"
+          role="tab"
+          aria-controls="about-us"
+          aria-selected="false"
+        >
+          <div class="flex-1">
+            <div class="fs--1 fs-sm-0 fs-lg-1 mb-0 fw-bold">About Us</div>
+          </div>
+        </button>
+      </li>
   </ul>
 
   <div class="tab-content mb-4" id="myTabContent">
@@ -66,8 +66,29 @@
     <div class="tab-pane pt-4 pt-md-5 fade" [ngClass]="{'active show': selectedTab === 'faqs'}" id="faqs" role="tabpanel" aria-labelledby="faqs-tab">
       <app-faq></app-faq>
     </div>
+
     <div class="tab-pane pt-4 pt-md-5 fade" [ngClass]="{'active show': selectedTab === 'about-us'}" id="about-us" role="tabpanel" aria-labelledby="about-us-tab">
-      <!-- Contenido de About Us -->
+        <!-- Contenido de About Us -->
+        <div class="container">
+          <p class="about">
+            MigraCheck nació de una necesidad muy común en Latinoamérica: obtener información precisa y clara sobre los procesos migratorios hacia España, tanto para estancias cortas como largas. Sabemos que muchas personas descubren los requisitos de estos procedimientos una vez que ya están en territorio español, enfrentando un panorama complejo, donde la información disponible suele ser abrumadora y difícil de comprender.
+          </p>
+          <p class="about">
+            Nuestro equipo ha identificado que, aunque existen múltiples fuentes de información, muchas de ellas están dispersas, cargadas de contenido irrelevante y difíciles de navegar. Es común que quienes inician el proceso migratorio terminen sintiéndose frustrados y confundidos, con dudas sin resolver o malinterpretaciones de los requisitos.
+          </p>
+          <p class="about">
+            MigraCheck es una aplicación diseñada para simplificar este camino. Con una interfaz intuitiva y accesible, nuestro objetivo es ofrecer la información esencial en un formato fácil de entender. Ya no es necesario dedicar horas tratando de filtrar datos confusos; aquí encontrarás respuestas claras y directas, adaptadas específicamente para personas de habla hispana en Latinoamérica.
+          </p>
+          <p class="about">
+            Además, entendemos que no todos desean o pueden llevar a cabo estos procedimientos de manera independiente. Por eso, MigraCheck también cuenta con una red de abogados especializados que puedes contactar directamente a través de la app. Estos profesionales están disponibles para guiarte en cada paso, agilizando tu proceso si prefieres contar con el respaldo de expertos en la materia.
+          </p>
+
+          <h1>Misión</h1>
+          <p class="about">
+            Nuestra misión es ser un aliado confiable para quienes buscan nuevas oportunidades en España, eliminando barreras informativas y brindando apoyo en un proceso que puede ser desafiante. Con MigraCheck, te ayudamos a dar el primer paso de manera segura y bien informado.
+          </p>
+        </div>
+      </div>
     </div>
-  </div>
 </section>
+
