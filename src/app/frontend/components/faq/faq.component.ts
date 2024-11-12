@@ -1,4 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FaqService } from '../../services/faq.service';
 import { Faq } from '../../interfaces/faq';
@@ -6,12 +6,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { HeadfaqComponent } from "../headfaq/headfaq.component";
 import { Location } from '@angular/common';
 import { NavbottomComponent } from "../navbottom/navbottom.component";
-import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-faq',
   standalone: true,
-  imports: [CommonModule, HeadfaqComponent, NavbottomComponent, NavbarComponent],
+  imports: [CommonModule, HeadfaqComponent, NavbottomComponent],
   templateUrl: './faq.component.html',
   styleUrls: ['./faq.component.css']
 })
@@ -21,7 +20,7 @@ export class FaqComponent implements OnInit {
   selectedCountry: string = '';
   selectedVisaType: string = '';
   openIndex: number | null = null; 
-
+  showHeadfaq: boolean = true;
 
   constructor(
     private faqService: FaqService,

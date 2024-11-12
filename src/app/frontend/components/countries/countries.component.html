@@ -9,8 +9,11 @@
           <option *ngFor="let item of listCountries" [value]="item.id_country">
               {{ item.name }}
           </option>
-      </select>
-
+        </select>
+        <div *ngIf="showError && !countryIdSelected" class="text-danger">
+          Debes seleccionar un país.
+        </div>
+    
       </div>
       <button (click)="onClickNext()" class="btn btn-primary">Siguiente</button>
   </div>

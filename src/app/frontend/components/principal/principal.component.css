@@ -1,0 +1,16 @@
+.nav-link i {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.nav-link:hover i {
+  transform: scale(1.2);
+  color: #5d8af2;
+}
+
+.navbar .nav-link i {
+  font-size: 1.5rem;
+}
+
+.navbar .nav-link small {
+  font-size: 0.8rem;
+}

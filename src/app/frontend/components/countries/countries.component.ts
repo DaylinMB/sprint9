@@ -1,28 +1,30 @@
-import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { RouterModule, Router } from '@angular/router';
+
 
 import { CountryService } from '../../services/country.service';
 import { Country } from '../../interfaces/country';
-import { NavbarComponent } from "../navbar/navbar.component";
 
 @Component({
   selector: 'app-countries',
   standalone: true,
-  imports: [CommonModule, RouterModule, NavbarComponent],
+  imports: [CommonModule, RouterModule,  ],
   templateUrl: './countries.component.html',
   styleUrl: './countries.component.css',
 })
 export class CountriesComponent {
   listCountries: Country[] = [];
-  countryIdSelected: number = 0;
+  countryIdSelected: number | null = null; 
+  showError: boolean = false; 
 
   ngOnInit(): void {
     this.getCountriesData();
   }
 
-  constructor(private router: Router, private _countryService: CountryService) {}
+  constructor(private router: Router, private _countryService: CountryService,
+  ) {
+  }
 
   populateDropdown(data: Country[]) {
     this.listCountries = data.sort((a, b) => a.name.localeCompare(b.name));
@@ -39,6 +41,11 @@ export class CountriesComponent {
   }
 
   onClickNext() {
+    if (!this.countryIdSelected) {
+      this.showError = true;
+      return; 
+    }
+    this.showError = false;
     this.router.navigate(['/stay'], { queryParams: { selectedCountryId: this.countryIdSelected } });
   }
 }

@@ -4,6 +4,8 @@ import cors from 'cors';
 import routeCountry from '../routes/country';
 import routeFaq from '../routes/faq';
 import routeProcess from '../routes/process';
+import routeLawyer from '../routes/lawyers';
+
 
 class Server {
   private app: Application;
@@ -34,6 +36,8 @@ class Server {
     this.app.use('/api/countryId/', routeCountry);
     this.app.use('/api/faq/', routeFaq);
     this.app.use('/api/process/', routeProcess);
+    this.app.use('/api/lawyers/', routeLawyer);
+
 
   }
 

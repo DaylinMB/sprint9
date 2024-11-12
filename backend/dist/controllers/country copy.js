@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getCountries = void 0;
+exports.getCountryId = exports.getCountries = void 0;
 const country_1 = __importDefault(require("../models/country"));
 const getCountries = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -24,3 +24,17 @@ const getCountries = (req, res) => __awaiter(void 0, void 0, void 0, function* (
     }
 });
 exports.getCountries = getCountries;
+const getCountryId = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const country = yield country_1.default.findAll({
+            where: {
+                id_country: req.params.countryId,
+            },
+        });
+        res.json(country);
+    }
+    catch (error) {
+        res.status(500).json({ msg: 'Error fetching FAQs', error });
+    }
+});
+exports.getCountryId = getCountryId;

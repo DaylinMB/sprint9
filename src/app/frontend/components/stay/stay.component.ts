@@ -4,18 +4,14 @@ import { ProcessService } from '../../services/process.service';
 import { Process } from '../../interfaces/process';
 
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
-import { RouterModule } from '@angular/router';
 
-import { FaqComponent } from '../faq/faq.component';
-import { CountriesComponent } from '../countries/countries.component';
 import { Location } from '@angular/common';
 
 
 @Component({
   selector: 'app-stay',
   standalone: true,
-  imports: [ CommonModule, RouterOutlet, RouterModule, FaqComponent, CountriesComponent  ],
+  imports: [ CommonModule ],
   templateUrl: './stay.component.html',
   styleUrls: ['./stay.component.css']
 })
@@ -69,11 +65,11 @@ export class StayComponent implements OnInit{
 
   navigateToFaq(selectedIdProcess: string) {
     if (selectedIdProcess) {
-      this.router.navigate(['/tab'], {
+      this.router.navigate(['/principal'], {
         queryParams: {
           selectedIdProcess,
           selectedCountryId: this.selectedCountryId,
-          selectedTab: 'faqs' // Pestaña activa
+          selectedTab: 'faqs'
         }
       });
     }

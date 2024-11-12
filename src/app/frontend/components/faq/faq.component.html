@@ -1,4 +1,3 @@
-
 <div class="container-fluid">
     <!-- <button (click)="volver()" class="btn btn-secondary mb-3">Volver</button> -->
 
@@ -22,4 +21,8 @@
         </div>
     </div>
 </div>
+
+
+<app-headfaq *ngIf="showHeadfaq" (closeEvent)="showHeadfaq = false"></app-headfaq>
+
 <app-navbottom></app-navbottom>

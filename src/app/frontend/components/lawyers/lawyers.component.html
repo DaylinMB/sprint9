@@ -1,43 +1,46 @@
+<app-navbar></app-navbar>
 
-<div class="tab-content mb-4" id="myTabContent">
-    <div class="tab-pane pt-4 pt-md-5 fade active show" id="editors-pick" role="tabpanel" aria-labelledby="editors-pick-tab">
-        <div class="row g-3 g-sm-4">
-            <div class="col-12 col-md-4">
-                <div class="card shadow-lg border-light rounded">
-                    <!-- Foto del abogado -->
-                    <img src="https://via.placeholder.com/150" class="card-img-top rounded-circle mx-auto mt-3" alt="Abogado" style="width: 150px; height: 150px; object-fit: cover;">
-                        
-                    <div class="card-body text-center">
-                                
-                    <h5 class="card-title fw-bold mb-2">Juan Pérez</h5>
-                    <p class="card-text text-muted">Abogado especializado en derecho corporativo</p>
-                
-                    <div class="d-flex justify-content-center mb-2">
-                        <!-- Correo -->
-                        <p class="mb-0 me-3">
-                            <a href="mailto:juan.perez@abogado.com" class="btn btn-outline-primary btn-sm">
-                                <i class="bi bi-envelope"></i> Correo
-                            </a>
-                        </p>
-                        
-                        <!-- Teléfono -->
-                        <p class="mb-0">
-                            <a href="tel:+123456789" class="btn btn-outline-success btn-sm">
-                                <i class="bi bi-telephone"></i> Teléfono
-                            </a>
-                        </p>
-                    </div>
+<div class="container">
+  <div class="row">
+    <!-- Si no hay abogados, muestra un mensaje -->
+    <p *ngIf="lawyers.length === 0" class="text-center text-muted">
+      No hay abogados disponibles.
+    </p>
 
-                    </div>
-                    <!-- Pie de la card con detalles adicionales si es necesario -->
-                    <div class="card-footer bg-transparent border-top-0 text-center">
-                                <small class="text-muted">Con más de 10 años de experiencia</small>
-                    </div>
-                 </div>
-            </div>
+    <!-- Mostrar los abogados usando un *ngFor -->
+    <div *ngFor="let lawyer of lawyers" class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img
+          *ngIf="lawyer.photo_url"
+          [src]="lawyer.photo_url"
+          class="card-img-top"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ lawyer.name }}</h5>
+          <p class="card-text">Teléfono: {{ lawyer.phone }}</p>
+          <p class="card-text">Correo: {{ lawyer.mail }}</p>
+          <!-- Si no hay foto, muestra un ícono o mensaje por defecto -->
+          <p *ngIf="!lawyer.photo_url" class="text-center text-muted">
+            Foto no disponible
+          </p>
         </div>
+      </div>
     </div>
+  </div>
 </div>
+
+
+
+<app-navbottom></app-navbottom>
+
+
+
+
+
+
+
+
+
 
 <!-- 
             

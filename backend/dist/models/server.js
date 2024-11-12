@@ -18,6 +18,7 @@ const cors_1 = __importDefault(require("cors"));
 const country_1 = __importDefault(require("../routes/country"));
 const faq_1 = __importDefault(require("../routes/faq"));
 const process_1 = __importDefault(require("../routes/process"));
+const lawyers_1 = __importDefault(require("../routes/lawyers"));
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
@@ -42,6 +43,7 @@ class Server {
         this.app.use('/api/countryId/', country_1.default);
         this.app.use('/api/faq/', faq_1.default);
         this.app.use('/api/process/', process_1.default);
+        this.app.use('/api/lawyers/', lawyers_1.default);
     }
     midlewares() {
         //cors

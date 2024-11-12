@@ -1,20 +1,38 @@
-
-
-
-
-
-<div class="container-fluid text-center vh-100 d-flex align-items-center justify-content-center">
-  <div>
-      <img src="/assets/imagen3.svg" alt="hero" class="hero-image mb-4">
-      <h1 class="title fw-semibold mb-4">Bienvenidos a Migracheck</h1>
-      <div class="form-group mb-3">
-        <p class="intro-text animate-text">
-          Encuentra toda la información que necesitas sobre procesos migratorios en España, reunida en un solo lugar.
-        </p>
+<div class="container-fluid" [@animImageSlider]="currentStep">
+  <ng-container *ngFor="let step of steps; trackBy: track">
+    <div *ngIf="step === steps[currentStep]" class="slider-step">
+      <div class="slider-head">
+        <img [src]="steps[currentStep].img" class="slider-img-top" alt="...">
       </div>
-      <button (click)="goCountry()" class="btn btn-primary">
-        Siguiente
-      </button>
-      
-  </div>
+
+      <div class="slider-body">
+        <h3 class="slider-title">{{ step.title }}</h3>
+        <p class="slider-text">{{ step.description }}</p>
+      </div>
+
+      <div class="slider-foot">
+          <div class="controls">
+            <div *ngIf="currentStep !== steps.length - 1" class="controls">
+              <button (click)="prevStep()" [disabled]="currentStep === 0" class="btn btn-secondary btn-lg px-4 rounded-pill white-btn" type="button">
+                <i class="bi bi-arrow-left"></i>
+              </button>
+                
+              <button (click)="nextStep()" [disabled]="currentStep === steps.length - 1" class="btn btn-secondary btn-lg px-4 rounded-pill black-btn" type="button">
+                <i class="bi bi-arrow-right"></i>
+              </button>
+            </div>
+          <button *ngIf="currentStep === steps.length - 1" (click)="goCountry()" class="btn btn-primary btn-lg px-4 rounded-pill" type="button">
+            Comenzar
+          </button>
+
+          </div>
+
+          <div *ngIf="currentStep !== steps.length - 0" class="indicators">
+            <span *ngFor="let s of steps; let i = index" [class.active]="i === currentStep" class="indicator" (click)="goToStep(i)"></span>
+          </div>
+          
+          
+      </div>
+    </div>
+  </ng-container>
 </div>

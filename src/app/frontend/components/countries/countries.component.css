@@ -1,19 +1,14 @@
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  overflow: hidden;
-}
-
-
 .container-fluid {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90vh;
+  height: 100vh;
   width: 100vw;
   overflow: hidden;
   position: relative;
-  background-color: #6492FF;
+  background-color: #5d8af2;
+  font-family: 'Poppins', sans-serif;
+
 }
 
 .custom-card {
@@ -27,7 +22,7 @@ body {
   padding: 2rem;
   position: absolute;
   bottom: 0;
-  height: 80vh; 
+  height: 90vh; 
   background-color: white;
   box-shadow: 0 4px 80px rgba(52, 46, 216, 0.4);
 }
@@ -48,15 +43,20 @@ h2 {
   font-family: 'Poppins', sans-serif;
 }
 
+.text-danger{
+ padding: 10px;
+}
+
 button.btn-primary {
-  margin-top: 12rem; 
-  border-color: #6492FF;
+  margin-top: 7.5rem; 
+  border-color: #5d8af2;
   color: #ffffff;
-  background-color: #6492FF;
+  background-color: #5d8af2;
   font-weight: 500;
   font-size: 1.1rem;
   border-radius: 35px;
   padding: 0.6rem 2rem;
+
 }
 
 button.btn-secondary {
@@ -69,7 +69,7 @@ button.btn-secondary {
 }
 
 .custom-select {
-  background-color: #6995fb;
+  background-color: #5d8af2;
   color: white;
   border: none;
   padding: 0.75rem;
@@ -80,24 +80,24 @@ button.btn-secondary {
 }
 
 .custom-select:hover {
-  background-color: #668cdf;
+  background-color: #5d8af2;
 }
 
-/* Ajuste responsive para escritorio */
+
 @media (min-width: 1200px) {
   .country-image-large {
-    width: 400px; /* Ajusta según sea necesario */
+    width: 400px;
   }
 
   button.btn {
-    margin-top: 8rem; /* Ajusta según sea necesario */
+    margin-top: 8rem;
     font-size: 1.2rem;
   }
 
   .custom-select {
     display: block;
     margin: 0 auto;
-    width: 400px; /* Mantén el ancho que deseas */
+    width: 400px;
     border: none;
     padding: 0.75rem;
     border-radius: 14px;

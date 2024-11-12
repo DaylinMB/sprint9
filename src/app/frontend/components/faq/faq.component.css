@@ -1,18 +1,10 @@
-
-html,
-body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  background-color: #dde4f1;
-}
-
 .container-fluid {
-  height: 100vh;
-  background-color: #dde4f1; 
-  padding-top: 1rem;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  background-color: #dde4f1; 
+  padding-top: 1rem;
+  padding: 0; 
   font-family: 'Poppins', sans-serif;
 }
 
@@ -23,7 +15,7 @@ button.btn-secondary {
   z-index: 1050;
   background: none;
   border: none;
-  color: #6492ff;
+  color: #5d8af2;
   font-size: 1rem;
   cursor: pointer;
   font-family: 'Poppins', sans-serif;
@@ -46,11 +38,17 @@ button.btn-secondary:hover {
   overflow-y: auto;
 }
 
+.p{
+  color: #484848;
+}
+
 .accordion-body {
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: left;
+  margin: 0 15px;
+
 }
 
 .custom-accordion-item {
@@ -63,7 +61,7 @@ button.btn-secondary:hover {
 
 .custom-accordion-button {
   background-color: #ffffff;
-  color: #6492ff;
+  color: #5d8af2;
   border: none;
   font-weight: 500;
   width: 100%;

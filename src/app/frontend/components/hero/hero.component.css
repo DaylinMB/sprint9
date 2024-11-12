@@ -1,92 +1,137 @@
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  overflow: hidden;
-}
-
-
 .container-fluid {
+  height: 100vh;
+  width: 100%; 
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
-  width: 100%;
-  padding: 30px;
-  background-color: white;
-  flex-direction: column;
-  text-align: center;
-  animation: fadeIn 1.5s ease-in-out;
+  overflow: hidden; 
+  padding: 0; 
+  margin: 0; 
 }
 
-.hero-image {
-  max-width: 350px;
+.slider-title {
+  color: #5d8af2;
+}
+
+.slider-text{
+  color: #696969;
+}
+
+.slider-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  box-sizing: border-box;
+  text-align: center;
   width: 100%;
+  height: 100vh;
+  max-height: 100%;
+}
+
+.slider-head {
+  width: 100%;
+  height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; 
+  border-radius: 8px;
   margin-bottom: 20px;
 }
 
-.title {
-  color: #6190ff;
-  font-size: 1.5rem;
-  margin: 15px;
-  transform: translateY(20px);
-  animation: slideUp 1.5s ease forwards 0.5s;
-
+.slider-head img {
+  width: 85%;
+  height: auto;
+  object-fit: cover;
 }
 
-p{
-  font-size: 1rem;
-  color: #888888;
-  padding: 10px;
-  transform: translateY(20px);
-  animation: slideUp 1.5s ease forwards 0.5s;
+.slider-body {
+  padding: 1rem;
+  max-width: 100%;
+  min-height: 100px;
+  height: 200px; 
 }
 
-.btn-primary {
-  background-color: #6190ff;
-  color: white;
-  border: none;
-  border-radius: 10px;
-  padding: 10px 25px;
-  font-size: 1.2rem;
+.slider-foot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  justify-content: flex-start;
+  padding-bottom: 0;
+}
+
+.controls button {
+  margin: 0 10px;
+  border: #5d8af2;
   cursor: pointer;
-  margin: 20px;
-  transform: translateY(20px);
-  animation: slideUp 1.5s ease forwards 0.5s;
+  margin-bottom: 25px;
 }
 
-.btn-primary:hover {
-  background-color: #6190ff;
-  color: white;
+.controls button[disabled] {
+  background-color: #5d8af2;
+  cursor: not-allowed;
 }
 
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.controls button:first-child[disabled] {
+  display: none;
 }
 
+.indicators {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  cursor: pointer;
+}
 
-@media (max-width: 768px) {
-  .hero-image {
-    max-width: 250px;
-  }
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #c4d6fe;
+  margin: 0 5px;
+  cursor: pointer;
+}
 
-  .tetile {
+.indicator.active {
+  background-color: #5d8af2;
+  width: 30px;
+  border-radius: 20px;
+}
+
+.black-btn {
+  background-color: #5d8af2;
+  color: #fff;
+}
+
+.white-btn {
+  background-color: #c4d6fe;
+  color: #fff;
+}
+
+.btn-primary{
+  background-color: #5d8af2;
+}
+
+@media (max-width: 600px) {
+  .slider-body h3 {
     font-size: 1.5rem;
   }
-}
-
-@media (max-width: 480px) {
-  .hero-image {
-    max-width: 200px;
+  
+  .slider-body p {
+    font-size: 1rem;
   }
-
-  .tetile {
+  
+  .controls button {
     font-size: 1.2rem;
+    padding: 10px 15px; 
+  }
+
+  .indicator {
+    width: 8px;
+    height: 8px;
   }
 }
+

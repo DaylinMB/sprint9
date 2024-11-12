@@ -1,16 +1,22 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom">
-    <div class="container-fluid">
-      <!-- Usamos d-flex para alinear los iconos horizontalmente -->
-      <div class="d-flex justify-content-around w-100">
-        <a href="#" class="nav-link text-center">
-            <i class="fas fa-gavel"></i>
-        </a>
-        <a href="#" class="nav-link text-center">
-            <i class="fas fa-question-circle"></i>
-        </a>
-        <a href="#" class="nav-link text-center">
-            <i class="fas fa-users"></i>
-        </a>
-      </div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-bottom" style="z-index: 1050;">
+  <div class="container-fluid">
+    <div class="d-flex justify-content-around w-100">
+      <!-- Icono de Abogados (Mallete) -->
+      <a (click)="navigateToLawyers()" class="nav-link text-center">
+        <i class="bi bi-briefcase" style="font-size: 5vw;"></i> <!-- Icono minimalista de maletín -->
+        <small class="d-block text-muted">Abogados</small>
+      </a>
+      <!-- Icono de Página Principal -->
+      <a href="#" class="nav-link text-center">
+        <i class="bi bi-house-door" style="font-size: 5vw;"></i> <!-- Icono de casa -->
+        <small class="d-block text-muted">Inicio</small>
+      </a>
+      <!-- Icono de Tres Puntos (Más opciones) -->
+      <a href="#" class="nav-link text-center">
+        <i class="bi bi-three-dots" style="font-size: 5vw;"></i> <!-- Icono minimalista de tres puntos -->
+        <small class="d-block text-muted">Más</small>
+      </a>
     </div>
-  </nav>
+  </div>
+</nav>
